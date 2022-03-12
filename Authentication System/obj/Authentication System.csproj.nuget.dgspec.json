@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\visha\\source\\repos\\Authentication System\\Authentication System\\Authentication System.csproj": {}
+    "C:\\Users\\visha\\source\\repos\\Authentication System\\main\\Authentication System\\Authentication System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\visha\\source\\repos\\Authentication System\\Authentication System\\Authentication System.csproj": {
+    "C:\\Users\\visha\\source\\repos\\Authentication System\\main\\Authentication System\\Authentication System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\visha\\source\\repos\\Authentication System\\Authentication System\\Authentication System.csproj",
+        "projectUniqueName": "C:\\Users\\visha\\source\\repos\\Authentication System\\main\\Authentication System\\Authentication System.csproj",
         "projectName": "Authentication System",
-        "projectPath": "C:\\Users\\visha\\source\\repos\\Authentication System\\Authentication System\\Authentication System.csproj",
+        "projectPath": "C:\\Users\\visha\\source\\repos\\Authentication System\\main\\Authentication System\\Authentication System.csproj",
         "packagesPath": "C:\\Users\\visha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\visha\\source\\repos\\Authentication System\\Authentication System\\obj\\",
+        "outputPath": "C:\\Users\\visha\\source\\repos\\Authentication System\\main\\Authentication System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\visha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"

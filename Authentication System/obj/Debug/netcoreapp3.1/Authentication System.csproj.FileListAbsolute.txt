@@ -37,3 +37,50 @@ C:\Users\visha\source\repos\Authentication System\Authentication System\bin\Debu
 C:\Users\visha\source\repos\Authentication System\Authentication System\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\visha\source\repos\Authentication System\Authentication System\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\visha\source\repos\Authentication System\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.exe
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.deps.json
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.runtimeconfig.json
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.runtimeconfig.dev.json
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Authentication System.pdb
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\ZstdNet.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.csproj.AssemblyReference.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.AssemblyInfoInputs.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.AssemblyInfo.cs
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.csproj.CoreCompileInputs.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\staticwebassets\Authentication System.StaticWebAssets.Manifest.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\staticwebassets\Authentication System.StaticWebAssets.xml
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\scopedcss\bundle\Authentication System.styles.css
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.RazorTargetAssemblyInfo.cache
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.csproj.CopyComplete
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.dll
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.pdb
+C:\Users\visha\source\repos\Authentication System\main\Authentication System\obj\Debug\netcoreapp3.1\Authentication System.genruntimeconfig.cache

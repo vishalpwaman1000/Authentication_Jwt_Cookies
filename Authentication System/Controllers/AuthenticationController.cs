@@ -1,5 +1,6 @@
 ﻿using Authentication_System.DataAccessLayer;
 using Authentication_System.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ namespace Authentication_System.Controllers
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     public class AuthenticationController : ControllerBase
     {
 
@@ -22,6 +24,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterUser(RegisterUserRequest request)
         {
             RegisterUserResponse response = new RegisterUserResponse();
@@ -40,6 +43,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> UserLogin(UserLoginRequest request)
         {
             UserLoginResponse response = new UserLoginResponse();
@@ -57,6 +61,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddInformation(AddInformationRequest request)
         {
             AddInformationResponse response = new AddInformationResponse();
@@ -74,6 +79,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetInformation()
         {
             GetInformationResponse response = new GetInformationResponse();
