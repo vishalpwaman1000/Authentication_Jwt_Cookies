@@ -61,7 +61,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles ="user")]
         public async Task<IActionResult> AddInformation(AddInformationRequest request)
         {
             AddInformationResponse response = new AddInformationResponse();
@@ -79,7 +79,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles ="admin")]
         public async Task<IActionResult> GetInformation()
         {
             GetInformationResponse response = new GetInformationResponse();
