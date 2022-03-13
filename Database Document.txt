@@ -1,0 +1,23 @@
+crudapplication Table Syntax :
+
+create table crudapplication
+(
+UserId int auto_increment primary key,
+UserName varchar(255),
+EmailID varchar(255),
+MobileNumber varchar(10),
+Salary varchar(16) ,
+Gender varchar(10),
+IsActive bit default 1
+) 
+
+userdetail Table Syntax :
+
+create table userdetail
+(
+UserId int auto_increment primary key,
+PassWord varchar(255),
+Role varchar(10),
+InsertionDate varchar(100) default current_timestamp,
+IsActive bit default 1
+);
