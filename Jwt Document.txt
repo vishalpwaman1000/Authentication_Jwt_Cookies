@@ -1,0 +1,109 @@
+Install Packages :
+
+Package Name : Microsoft.AspNetCore.Authentication.JwtBearer
+Version : 3.1.23
+
+Package Name : Swashbuckle.AspNetCore 
+Version : 6.2.3
+
+============================= appsetting.json ==============================
+
+"Jwt": {
+    "Key": "ThisismySecretKey",
+    "Issuer": "https://localhost:44324/",
+    "Audiance": "https://localhost:44324/"
+  },
+
+============================= Startup.cs ====================================
+
+Put This Code in ConfigureServices Method :
+
+	var key = Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]);
+	            services.AddAuthentication(x =>
+	            {
+	                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+	                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+	                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+	            }).AddJwtBearer(x =>
+	            {
+	                x.RequireHttpsMetadata = false;
+	                x.SaveToken = false;
+	                x.TokenValidationParameters = new TokenValidationParameters
+	                {
+	                    ValidateIssuerSigningKey = true,
+	                    IssuerSigningKey = new SymmetricSecurityKey(key),
+	                    ValidateIssuer = false,
+	                    ValidateAudience = false,
+	                };
+	            });
+
+	            services.AddSwaggerGen(option =>
+	            {
+	                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+	                {
+	                    Name = "Authorization",
+	                    Type = SecuritySchemeType.ApiKey,
+	                    Scheme = "Bearer",
+	                    BearerFormat = "JWT",
+	                    In = ParameterLocation.Header,
+	                    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+	                });
+	                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+	                 {
+	                     {
+	                           new OpenApiSecurityScheme
+	                             {
+	                                 Reference = new OpenApiReference
+	                                 {
+	                                     Type = ReferenceType.SecurityScheme,
+	                                     Id = "Bearer"
+	                                 }
+	                             },
+	                             new string[] {}
+	                     }
+	                 });
+
+	            });
+
+
+put This Code in Configure Method : 
+
+	app.UseSwagger();
+	app.UseSwaggerUI(c =>
+	{
+	    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+	});
+
+
+============================= Controlller =================================== 
+
+[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+
+============================= DataAccess Layer ==============================
+
+public string GenerateJWT(string UserId, string Email, string Role)
+{
+
+    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+    //claim is used to add identity to JWT token
+    var claims = new[] {
+         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+         new Claim(JwtRegisteredClaimNames.Sid, UserId),
+         new Claim(JwtRegisteredClaimNames.Email, Email),
+         new Claim(ClaimTypes.Role,Role),
+         new Claim("Date", DateTime.Now.ToString()),
+         };
+
+    var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
+      _configuration["Jwt:Audiance"],
+      claims,    //null original value
+      expires: DateTime.Now.AddMinutes(120),
+      
+      //notBefore:
+      signingCredentials: credentials);
+
+    string Data = new JwtSecurityTokenHandler().WriteToken(token); //return access token 
+    return Data;
+}

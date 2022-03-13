@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +16,7 @@ namespace Authentication_System.DataAccessLayer
     {
         public readonly IConfiguration _configuration;
         public readonly MySqlConnection _mySqlConnection;
+
         public AuthenticationDataAccess(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -105,11 +105,18 @@ namespace Authentication_System.DataAccessLayer
                         if (dataReader.HasRows)
                         {
                             await dataReader.ReadAsync();
+                            response.Message = "Login Successful";
                             response.data = new UserLoginInformation();
                             response.data.UserID = dataReader["UserId"] != DBNull.Value ? Convert.ToString(dataReader["UserId"]) : string.Empty;
                             response.data.UserName = dataReader["UserName"] != DBNull.Value ? Convert.ToString(dataReader["UserName"]) : string.Empty;
                             response.data.Role = dataReader["Role"] != DBNull.Value ? Convert.ToString(dataReader["Role"]) : string.Empty;
-                            response.Token = GenerateJWT(response.data.UserID, response.data.UserName, response.data.Role);
+                            response.Token = GenerateJwt(response.data.UserID, response.data.UserName, response.data.Role);
+                        }
+                        else
+                        {
+                            response.IsSuccess = false;
+                            response.Message = "Login Unsuccessful";
+                            return response;
                         }
                     }
 
@@ -235,26 +242,26 @@ namespace Authentication_System.DataAccessLayer
             return response;
         }
 
-        public string GenerateJWT(string UserId, string Email, string Role)
+        public string GenerateJwt(string UserID, string Email, string Role)
         {
-
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             //claim is used to add identity to JWT token
             var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Sid, UserId),
-                 new Claim(JwtRegisteredClaimNames.Email, Email),
-                 new Claim("Roles", Role),
-                 new Claim(ClaimTypes.Role,Role),
-                 new Claim("Date", DateTime.Now.ToString()),
-                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-             };
+         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+         new Claim(JwtRegisteredClaimNames.Sid, UserID),
+         new Claim(JwtRegisteredClaimNames.Email, Email),
+         new Claim(ClaimTypes.Role,Role),
+         new Claim("Date", DateTime.Now.ToString()),
+         };
 
             var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
               _configuration["Jwt:Audiance"],
               claims,    //null original value
               expires: DateTime.Now.AddMinutes(120),
+
+              //notBefore:
               signingCredentials: credentials);
 
             string Data = new JwtSecurityTokenHandler().WriteToken(token); //return access token 

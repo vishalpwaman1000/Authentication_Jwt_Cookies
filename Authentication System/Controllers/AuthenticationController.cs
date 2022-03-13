@@ -1,11 +1,8 @@
 ﻿using Authentication_System.DataAccessLayer;
 using Authentication_System.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Authentication_System.Controllers
@@ -61,7 +58,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles ="user")]
+        [Authorize(Roles ="admin")]
         public async Task<IActionResult> AddInformation(AddInformationRequest request)
         {
             AddInformationResponse response = new AddInformationResponse();
@@ -79,7 +76,7 @@ namespace Authentication_System.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin, user")]
         public async Task<IActionResult> GetInformation()
         {
             GetInformationResponse response = new GetInformationResponse();
